@@ -18,3 +18,4 @@ Thumbs.db
 !mlruns/
 !models/**/*.pkl
 !models/**/*.json
+data/processed/engineered_dataset.csv
