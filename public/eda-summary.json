@@ -1,29 +1,110 @@
 {
-  "generated": false,
+  "generated": true,
+  "generated_at": "2026-08-21T13:00:29.667057",
   "eligibilityByScenario": [
-    { "scenario": "E-commerce Shopping", "Eligible": 72, "High_Risk": 18, "Not_Eligible": 10 },
-    { "scenario": "Home Appliances", "Eligible": 68, "High_Risk": 22, "Not_Eligible": 10 },
-    { "scenario": "Vehicle", "Eligible": 64, "High_Risk": 24, "Not_Eligible": 12 },
-    { "scenario": "Personal Loan", "Eligible": 58, "High_Risk": 28, "Not_Eligible": 14 },
-    { "scenario": "Education", "Eligible": 76, "High_Risk": 16, "Not_Eligible": 8 }
+    {
+      "scenario": "E-commerce Shopping",
+      "Eligible": 26.3,
+      "High_Risk": 4.9,
+      "Not_Eligible": 68.7
+    },
+    {
+      "scenario": "Education",
+      "Eligible": 17.7,
+      "High_Risk": 4.8,
+      "Not_Eligible": 77.5
+    },
+    {
+      "scenario": "Home Appliances",
+      "Eligible": 26.0,
+      "High_Risk": 5.2,
+      "Not_Eligible": 68.8
+    },
+    {
+      "scenario": "Personal Loan",
+      "Eligible": 11.3,
+      "High_Risk": 3.4,
+      "Not_Eligible": 85.2
+    },
+    {
+      "scenario": "Vehicle",
+      "Eligible": 10.6,
+      "High_Risk": 3.3,
+      "Not_Eligible": 86.2
+    }
   ],
   "eligibilityByAgeBracket": [
-    { "ageBracket": "25-30", "approvalRate": 64 },
-    { "ageBracket": "31-40", "approvalRate": 78 },
-    { "ageBracket": "41-50", "approvalRate": 82 },
-    { "ageBracket": "51-60", "approvalRate": 71 }
+    {
+      "ageBracket": "25-30",
+      "approvalRate": 18.9
+    },
+    {
+      "ageBracket": "31-40",
+      "approvalRate": 18.2
+    },
+    {
+      "ageBracket": "41-50",
+      "approvalRate": 18.4
+    },
+    {
+      "ageBracket": "51-60",
+      "approvalRate": 18.4
+    }
   ],
   "eligibilityByEmploymentType": [
-    { "type": "Government", "approvalRate": 86 },
-    { "type": "Private (MNC)", "approvalRate": 79 },
-    { "type": "Private (Startup)", "approvalRate": 62 },
-    { "type": "Self-employed", "approvalRate": 54 }
+    {
+      "type": "Government",
+      "approvalRate": 21.4
+    },
+    {
+      "type": "Private",
+      "approvalRate": 17.8
+    },
+    {
+      "type": "Self-employed",
+      "approvalRate": 16.5
+    }
   ],
   "emiDistributionByScenario": [
-    { "scenario": "E-commerce Shopping", "min": 500, "q1": 2500, "median": 5000, "q3": 9000, "max": 15000 },
-    { "scenario": "Home Appliances", "min": 1200, "q1": 4000, "median": 8500, "q3": 14000, "max": 22000 },
-    { "scenario": "Vehicle", "min": 3000, "q1": 12000, "median": 22000, "q3": 35000, "max": 48000 },
-    { "scenario": "Personal Loan", "min": 2500, "q1": 10000, "median": 18000, "q3": 28000, "max": 50000 },
-    { "scenario": "Education", "min": 2000, "q1": 8000, "median": 15000, "q3": 24000, "max": 40000 }
+    {
+      "scenario": "E-commerce Shopping",
+      "min": 500.0,
+      "q1": 500.0,
+      "median": 4235.0,
+      "q3": 9841.7,
+      "max": 74250.0
+    },
+    {
+      "scenario": "Education",
+      "min": 500.0,
+      "q1": 500.0,
+      "median": 4200.0,
+      "q3": 9750.0,
+      "max": 84651.6
+    },
+    {
+      "scenario": "Home Appliances",
+      "min": 500.0,
+      "q1": 500.0,
+      "median": 4219.6,
+      "q3": 9790.0,
+      "max": 88200.0
+    },
+    {
+      "scenario": "Personal Loan",
+      "min": 500.0,
+      "q1": 500.0,
+      "median": 4200.0,
+      "q3": 9768.0,
+      "max": 80784.0
+    },
+    {
+      "scenario": "Vehicle",
+      "min": 500.0,
+      "q1": 500.0,
+      "median": 4200.0,
+      "q3": 9792.0,
+      "max": 91040.4
+    }
   ]
 }
