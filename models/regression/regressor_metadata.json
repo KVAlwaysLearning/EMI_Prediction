@@ -1,0 +1,101 @@
+{
+  "model_name": "PENDING_TRAINING",
+  "task": "regression",
+  "target": "max_monthly_emi",
+  "unit": "INR",
+  "feature_order": [
+    "age",
+    "monthly_salary",
+    "years_of_employment",
+    "monthly_rent",
+    "family_size",
+    "dependents",
+    "school_fees",
+    "college_fees",
+    "travel_expenses",
+    "groceries_utilities",
+    "other_monthly_expenses",
+    "existing_loans",
+    "current_emi_amount",
+    "credit_score",
+    "bank_balance",
+    "emergency_fund",
+    "requested_amount",
+    "requested_tenure",
+    "debt_to_income_ratio",
+    "expense_to_income_ratio",
+    "affordability_ratio",
+    "risk_score",
+    "salary_credit_interaction",
+    "surplus_to_requested_ratio",
+    "gender_Female",
+    "gender_Male",
+    "marital_status_Married",
+    "marital_status_Single",
+    "education_Graduate",
+    "education_High School",
+    "education_Post Graduate",
+    "education_Professional",
+    "employment_type_Government",
+    "employment_type_Private",
+    "employment_type_Self-employed",
+    "company_type_Enterprise",
+    "company_type_Government",
+    "company_type_Local",
+    "company_type_MNC",
+    "company_type_Startup",
+    "house_type_Family",
+    "house_type_Own",
+    "house_type_Rented",
+    "emi_scenario_E-commerce Shopping",
+    "emi_scenario_Education",
+    "emi_scenario_Home Appliances",
+    "emi_scenario_Personal Loan",
+    "emi_scenario_Vehicle"
+  ],
+  "categorical_encodings": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "marital_status": [
+      "Married",
+      "Single"
+    ],
+    "education": [
+      "Graduate",
+      "High School",
+      "Post Graduate",
+      "Professional"
+    ],
+    "employment_type": [
+      "Government",
+      "Private",
+      "Self-employed"
+    ],
+    "company_type": [
+      "Enterprise",
+      "Government",
+      "Local",
+      "MNC",
+      "Startup"
+    ],
+    "house_type": [
+      "Family",
+      "Own",
+      "Rented"
+    ],
+    "emi_scenario": [
+      "E-commerce Shopping",
+      "Education",
+      "Home Appliances",
+      "Personal Loan",
+      "Vehicle"
+    ]
+  },
+  "metrics": null,
+  "mlflow_run_id": null,
+  "note": "Populate this file by running notebooks 04-07 in Colab; do not hand-write metric values.",
+  "export_version": "v3.0",
+  "exported_at": null
+}

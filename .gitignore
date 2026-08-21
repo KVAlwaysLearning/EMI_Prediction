@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+node_modules/
+.next/
+dist/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+data/raw/EMI_dataset_large.csv
+.DS_Store
+Thumbs.db
+
+# Tracked ML deliverables
+!mlruns/
+!models/**/*.pkl
+!models/**/*.json

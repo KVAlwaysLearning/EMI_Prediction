@@ -1,0 +1,27 @@
+{
+  "generated": false,
+  "note": "Populate this file by running notebooks 04-07 in Colab with a real DagsHub MLflow connection; do not hand-write metric values.",
+  "classification": [
+    {
+      "model_name": "PENDING_TRAINING",
+      "accuracy": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0,
+      "roc_auc": 0,
+      "mlflow_run_id": null,
+      "is_production": false
+    }
+  ],
+  "regression": [
+    {
+      "model_name": "PENDING_TRAINING",
+      "rmse": 0,
+      "mae": 0,
+      "r2": 0,
+      "mape": 0,
+      "mlflow_run_id": null,
+      "is_production": false
+    }
+  ]
+}

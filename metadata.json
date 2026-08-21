@@ -1,0 +1,6 @@
+{
+  "name": "EMIPredict AI",
+  "description": "Intelligent Financial Risk Assessment Platform - Dual MLflow/ONNX Inference Architecture for EMI Eligibility Classification & Max Monthly EMI Regression.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
