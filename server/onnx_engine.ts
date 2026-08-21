@@ -1,10 +1,12 @@
 import path from 'path';
 import fs from 'fs';
-import { createRequire } from 'module';
 
-const require = createRequire(import.meta.url);
+// This file is bundled to CommonJS by esbuild (see package.json's "build" script),
+// so a plain `require` is already available natively at runtime — no need to
+// construct one via createRequire(import.meta.url), which breaks in CJS output
+// because import.meta is undefined there.
+declare const require: any;
 
-// Dynamically import onnxruntime-node to avoid startup failure if native binaries differ
 let ort: any = null;
 try {
   ort = require('onnxruntime-node');
