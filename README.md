@@ -71,7 +71,7 @@ All notebooks and inference engines use the exact same feature engineering modul
   - `marital_status` (2: Married, Single)
   - `education` (4: Graduate, High School, Post Graduate, Professional)
   - `employment_type` (3: Government, Private, Self-employed)
-  - `company_type` (5: Enterprise, Government, Local, MNC, Startup)
+  - `company_type` (5: Large Indian, MNC, Mid-size, Small, Startup)
   - `house_type` (3: Family, Own, Rented)
   - `emi_scenario` (5: E-commerce Shopping, Education, Home Appliances, Personal Loan, Vehicle)
 

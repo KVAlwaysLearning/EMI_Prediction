@@ -11,7 +11,7 @@
 | `monthly_salary` | Float | 15,000 - 200,000 INR | Gross monthly salary income |
 | `employment_type` | Categorical | Private, Government, Self-employed | Employment sector/status |
 | `years_of_employment` | Float | 0.0 - 40.0 | Work experience in years |
-| `company_type` | Categorical | MNC, Startup, Local, Government, Enterprise | Type of employing organization |
+| `company_type` | Categorical | Large Indian, MNC, Mid-size, Small, Startup | Type of employing organization |
 | **Housing & Family** | | | |
 | `house_type` | Categorical | Rented, Own, Family | Current housing arrangement |
 | `monthly_rent` | Float | >= 0 INR | Monthly rent obligation |

@@ -18,7 +18,7 @@ CATEGORICAL_CATEGORIES = {
     'marital_status': ['Married', 'Single'],
     'education': ['Graduate', 'High School', 'Post Graduate', 'Professional'],
     'employment_type': ['Government', 'Private', 'Self-employed'],
-    'company_type': ['Enterprise', 'Government', 'Local', 'MNC', 'Startup'],
+    'company_type': ['Large Indian', 'MNC', 'Mid-size', 'Small', 'Startup'],
     'house_type': ['Family', 'Own', 'Rented'],
     'emi_scenario': ['E-commerce Shopping', 'Education', 'Home Appliances', 'Personal Loan', 'Vehicle'],
 }
@@ -60,7 +60,7 @@ ONE_HOT_FEATURE_ORDER = [
     'marital_status_Married', 'marital_status_Single',
     'education_Graduate', 'education_High School', 'education_Post Graduate', 'education_Professional',
     'employment_type_Government', 'employment_type_Private', 'employment_type_Self-employed',
-    'company_type_Enterprise', 'company_type_Government', 'company_type_Local', 'company_type_MNC', 'company_type_Startup',
+    'company_type_Large Indian', 'company_type_MNC', 'company_type_Mid-size', 'company_type_Small', 'company_type_Startup',
     'house_type_Family', 'house_type_Own', 'house_type_Rented',
     'emi_scenario_E-commerce Shopping', 'emi_scenario_Education', 'emi_scenario_Home Appliances', 'emi_scenario_Personal Loan', 'emi_scenario_Vehicle'
 ]
