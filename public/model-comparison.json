@@ -1,6 +1,6 @@
 {
   "generated": true,
-  "generated_at": "2026-08-21T16:14:40.104720",
+  "generated_at": "2026-08-21T22:06:04.800759",
   "classification": [
     {
       "model_name": "XGBoost Classifier",
@@ -33,16 +33,6 @@
       "is_production": false
     },
     {
-      "model_name": "Random Forest Classifier",
-      "accuracy": 0.9495,
-      "precision": 0.8853,
-      "recall": 0.6678,
-      "f1": 0.6607,
-      "roc_auc": 0.9891,
-      "mlflow_run_id": "ef299f4912aa4306a81ba392527ebcfa",
-      "is_production": false
-    },
-    {
       "model_name": "Logistic Regression",
       "accuracy": 0.9012,
       "precision": 0.6114,
@@ -50,26 +40,6 @@
       "f1": 0.5867,
       "roc_auc": 0.9336,
       "mlflow_run_id": "302ff3da18624867a2bf46ae0ce07a98",
-      "is_production": false
-    },
-    {
-      "model_name": "Logistic Regression",
-      "accuracy": 0.9012,
-      "precision": 0.6114,
-      "recall": 0.5961,
-      "f1": 0.5867,
-      "roc_auc": 0.9336,
-      "mlflow_run_id": "fe531c2d78d84fff8a9c90541b91adc3",
-      "is_production": false
-    },
-    {
-      "model_name": "Gradient Boosting Classifier",
-      "accuracy": 0,
-      "precision": 0,
-      "recall": 0,
-      "f1": 0,
-      "roc_auc": 0,
-      "mlflow_run_id": "be34ae03296c4c30931580c68981f5c6",
       "is_production": false
     }
   ],
@@ -112,7 +82,7 @@
     }
   ],
   "selection_rationale": {
-    "classification": "XGBoost Classifier achieved highest macro F1-score (0.0000) and multi-class ROC-AUC (0.0000) on validation split.",
+    "classification": "XGBoost Classifier achieved highest F1-score (0.8975) and ROC-AUC (0.9956) on validation split.",
     "regression": "XGBoost Regressor achieved lowest RMSE (\u20b9826.30) and highest R2 (0.9887) on validation split."
   }
 }
