@@ -174,7 +174,7 @@ async function runUnifiedInference(body: any) {
 async function startServer() {
   await initMongoDB();
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 
   app.use(express.json());
 
