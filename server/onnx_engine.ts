@@ -27,7 +27,7 @@ export const CATEGORICAL_CATEGORIES: Record<string, string[]> = {
   marital_status: ['Married', 'Single'],
   education: ['Graduate', 'High School', 'Post Graduate', 'Professional'],
   employment_type: ['Government', 'Private', 'Self-employed'],
-  company_type: ['Enterprise', 'Government', 'Local', 'MNC', 'Startup'],
+  company_type: ['Large Indian', 'MNC', 'Mid-size', 'Small', 'Startup'],
   house_type: ['Family', 'Own', 'Rented'],
   emi_scenario: ['E-commerce Shopping', 'Education', 'Home Appliances', 'Personal Loan', 'Vehicle'],
 };
@@ -64,7 +64,7 @@ export const ONE_HOT_FEATURE_ORDER = [
   'marital_status_Married', 'marital_status_Single',
   'education_Graduate', 'education_High School', 'education_Post Graduate', 'education_Professional',
   'employment_type_Government', 'employment_type_Private', 'employment_type_Self-employed',
-  'company_type_Enterprise', 'company_type_Government', 'company_type_Local', 'company_type_MNC', 'company_type_Startup',
+  'company_type_Large Indian', 'company_type_MNC', 'company_type_Mid-size', 'company_type_Small', 'company_type_Startup',
   'house_type_Family', 'house_type_Own', 'house_type_Rented',
   'emi_scenario_E-commerce Shopping', 'emi_scenario_Education', 'emi_scenario_Home Appliances', 'emi_scenario_Personal Loan', 'emi_scenario_Vehicle'
 ];
@@ -157,6 +157,28 @@ export function buildFeatureVector(req: Record<string, any>): { vector: number[]
 let classSession: any = null;
 let regSession: any = null;
 let hasWarnedMissingProba = false;
+let scalerParams: { mean: number[]; scale: number[]; applies_to_first_n_columns: number } | null = null;
+
+function loadScalerParams(): boolean {
+  try {
+    const scalerPath = path.join(process.cwd(), 'models', 'preprocessing', 'scaler_params.json');
+    if (!fs.existsSync(scalerPath)) return false;
+    const raw = fs.readFileSync(scalerPath, 'utf-8');
+    scalerParams = JSON.parse(raw);
+    return true;
+  } catch (err) {
+    console.warn('[ONNX] Could not load scaler_params.json:', err);
+    return false;
+  }
+}
+
+export function applyScaling(vector: number[]): number[] {
+  if (!scalerParams) {
+    throw new Error('scaler_params.json not loaded — cannot apply scaling before ONNX inference');
+  }
+  const { mean, scale, applies_to_first_n_columns } = scalerParams;
+  return vector.map((v, i) => (i < applies_to_first_n_columns ? (v - mean[i]) / scale[i] : v));
+}
 
 export async function initOnnxSessions(): Promise<boolean> {
   if (!ort) return false;
@@ -164,10 +186,16 @@ export async function initOnnxSessions(): Promise<boolean> {
     const classPath = path.join(process.cwd(), 'models', 'classification', 'best_classifier.onnx');
     const regPath = path.join(process.cwd(), 'models', 'regression', 'best_regressor.onnx');
 
+    const scalerLoaded = loadScalerParams();
+    if (!scalerLoaded) {
+      console.warn('[ONNX] scaler_params.json missing — cannot initialize ONNX sessions safely');
+      return false;
+    }
+
     if (fs.existsSync(classPath) && fs.existsSync(regPath)) {
       classSession = await ort.InferenceSession.create(classPath);
       regSession = await ort.InferenceSession.create(regPath);
-      console.log('[ONNX] Successfully loaded classifier and regressor ONNX models');
+      console.log('[ONNX] Successfully loaded classifier and regressor ONNX models + scaler params');
       return true;
     }
   } catch (err) {
@@ -179,7 +207,8 @@ export async function initOnnxSessions(): Promise<boolean> {
 export function hasOnnxModels(): boolean {
   const classPath = path.join(process.cwd(), 'models', 'classification', 'best_classifier.onnx');
   const regPath = path.join(process.cwd(), 'models', 'regression', 'best_regressor.onnx');
-  return fs.existsSync(classPath) && fs.existsSync(regPath);
+  const scalerPath = path.join(process.cwd(), 'models', 'preprocessing', 'scaler_params.json');
+  return fs.existsSync(classPath) && fs.existsSync(regPath) && fs.existsSync(scalerPath);
 }
 
 export async function runOnnxInference(req: Record<string, any>) {
@@ -195,7 +224,8 @@ export async function runOnnxInference(req: Record<string, any>) {
   }
 
   const { vector, derived } = buildFeatureVector(req);
-  const inputTensor = new ort.Tensor('float32', new Float32Array(vector), [1, vector.length]);
+  const scaledVector = applyScaling(vector);
+  const inputTensor = new ort.Tensor('float32', new Float32Array(scaledVector), [1, scaledVector.length]);
 
   const classFeeds: Record<string, any> = {};
   const classInputName = classSession.inputNames[0] || 'float_input';
