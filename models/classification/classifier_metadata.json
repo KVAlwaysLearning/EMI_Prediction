@@ -1,5 +1,5 @@
 {
-  "model_name": "PENDING_TRAINING",
+  "model_name": "XGBoost Classifier",
   "task": "classification",
   "target": "emi_eligibility",
   "classes": [
@@ -97,9 +97,15 @@
       "Vehicle"
     ]
   },
-  "metrics": null,
-  "mlflow_run_id": null,
+  "metrics": {
+    "accuracy": 0.976366930171278,
+    "precision": 0.9138811708018849,
+    "recall": 0.8838579149926717,
+    "f1_score": 0.8975104693936213,
+    "roc_auc": 0.9956119071346404
+  },
+  "mlflow_run_id": "22dc24e758774210abe1791f7f6d43d8",
   "note": "Populate this file by running notebooks 04-07 in Colab; do not hand-write metric values.",
   "export_version": "v3.0",
-  "exported_at": null
+  "exported_at": "2026-08-21T16:14:40.099650"
 }

@@ -1,5 +1,5 @@
 {
-  "model_name": "PENDING_TRAINING",
+  "model_name": "XGBoost Regressor",
   "task": "regression",
   "target": "max_monthly_emi",
   "unit": "INR",
@@ -93,9 +93,13 @@
       "Vehicle"
     ]
   },
-  "metrics": null,
-  "mlflow_run_id": null,
+  "metrics": {
+    "rmse": 826.2993868862408,
+    "mae": 379.4305097430014,
+    "r2_score": 0.9887142945769974
+  },
+  "mlflow_run_id": "abac723025a94766aec56c4ef2a31a1d",
   "note": "Populate this file by running notebooks 04-07 in Colab; do not hand-write metric values.",
   "export_version": "v3.0",
-  "exported_at": null
+  "exported_at": "2026-08-21T16:14:40.103349"
 }

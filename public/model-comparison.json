@@ -1,27 +1,118 @@
 {
-  "generated": false,
-  "note": "Populate this file by running notebooks 04-07 in Colab with a real DagsHub MLflow connection; do not hand-write metric values.",
+  "generated": true,
+  "generated_at": "2026-08-21T16:14:40.104720",
   "classification": [
     {
-      "model_name": "PENDING_TRAINING",
+      "model_name": "XGBoost Classifier",
+      "accuracy": 0.9764,
+      "precision": 0.9139,
+      "recall": 0.8839,
+      "f1": 0.8975,
+      "roc_auc": 0.9956,
+      "mlflow_run_id": "22dc24e758774210abe1791f7f6d43d8",
+      "is_production": true
+    },
+    {
+      "model_name": "Gradient Boosting Classifier",
+      "accuracy": 0.9635,
+      "precision": 0.8662,
+      "recall": 0.8052,
+      "f1": 0.8284,
+      "roc_auc": 0.99,
+      "mlflow_run_id": "cc351417fbb2402486c8561e80992bee",
+      "is_production": false
+    },
+    {
+      "model_name": "Random Forest Classifier",
+      "accuracy": 0.9495,
+      "precision": 0.8853,
+      "recall": 0.6678,
+      "f1": 0.6607,
+      "roc_auc": 0.9891,
+      "mlflow_run_id": "58a199fd20dc4adf995e49ec7471167c",
+      "is_production": false
+    },
+    {
+      "model_name": "Random Forest Classifier",
+      "accuracy": 0.9495,
+      "precision": 0.8853,
+      "recall": 0.6678,
+      "f1": 0.6607,
+      "roc_auc": 0.9891,
+      "mlflow_run_id": "ef299f4912aa4306a81ba392527ebcfa",
+      "is_production": false
+    },
+    {
+      "model_name": "Logistic Regression",
+      "accuracy": 0.9012,
+      "precision": 0.6114,
+      "recall": 0.5961,
+      "f1": 0.5867,
+      "roc_auc": 0.9336,
+      "mlflow_run_id": "302ff3da18624867a2bf46ae0ce07a98",
+      "is_production": false
+    },
+    {
+      "model_name": "Logistic Regression",
+      "accuracy": 0.9012,
+      "precision": 0.6114,
+      "recall": 0.5961,
+      "f1": 0.5867,
+      "roc_auc": 0.9336,
+      "mlflow_run_id": "fe531c2d78d84fff8a9c90541b91adc3",
+      "is_production": false
+    },
+    {
+      "model_name": "Gradient Boosting Classifier",
       "accuracy": 0,
       "precision": 0,
       "recall": 0,
       "f1": 0,
       "roc_auc": 0,
-      "mlflow_run_id": null,
+      "mlflow_run_id": "be34ae03296c4c30931580c68981f5c6",
       "is_production": false
     }
   ],
   "regression": [
     {
-      "model_name": "PENDING_TRAINING",
-      "rmse": 0,
-      "mae": 0,
-      "r2": 0,
-      "mape": 0,
-      "mlflow_run_id": null,
+      "model_name": "XGBoost Regressor",
+      "rmse": 826.3,
+      "mae": 379.43,
+      "r2": 0.9887,
+      "mape": 2.53,
+      "mlflow_run_id": "abac723025a94766aec56c4ef2a31a1d",
+      "is_production": true
+    },
+    {
+      "model_name": "Random Forest Regressor",
+      "rmse": 1222.94,
+      "mae": 572.13,
+      "r2": 0.9753,
+      "mape": 3.81,
+      "mlflow_run_id": "afd666f1264c4a3ba3fca21c989cef3f",
+      "is_production": false
+    },
+    {
+      "model_name": "Gradient Boosting Regressor",
+      "rmse": 1505.47,
+      "mae": 805.77,
+      "r2": 0.9625,
+      "mape": 5.37,
+      "mlflow_run_id": "69378689f9ff4f9b8606c4034530a3e0",
+      "is_production": false
+    },
+    {
+      "model_name": "Linear Regression",
+      "rmse": 4099.12,
+      "mae": 2929.93,
+      "r2": 0.7223,
+      "mape": 19.53,
+      "mlflow_run_id": "57546a0206694606843e37e12c7d81f9",
       "is_production": false
     }
-  ]
+  ],
+  "selection_rationale": {
+    "classification": "XGBoost Classifier achieved highest macro F1-score (0.0000) and multi-class ROC-AUC (0.0000) on validation split.",
+    "regression": "XGBoost Regressor achieved lowest RMSE (\u20b9826.30) and highest R2 (0.9887) on validation split."
+  }
 }
