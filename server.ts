@@ -53,7 +53,7 @@ async function initMongoDB() {
     return;
   }
   try {
-    const client = new MongoClient(uri);
+    const client = new MongoClient(uri, { serverSelectionTimeoutMS: 8000, connectTimeoutMS: 8000 });
     await client.connect();
     const db = client.db('emipredict');
     mongoCollection = db.collection<StoredRecord>('records');
