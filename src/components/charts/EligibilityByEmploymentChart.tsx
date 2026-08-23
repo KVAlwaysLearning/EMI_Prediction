@@ -20,4 +20,16 @@ export const EligibilityByEmploymentChart: React.FC<Props> = ({ data }) => {
             <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
             <XAxis dataKey="type" stroke="#64748b" tick={{ fontSize: 11, fill: '#94a3b8' }} />
             <YAxis stroke="#64748b" tick={{ fontSize: 11, fill: '#94a3b8' }} domain={[0, 100]} />
-            <Tooltip contentStyle={{ backgroundColor: '#0b1329',
+            <Tooltip contentStyle={{ backgroundColor: '#0b1329', borderColor: '#1e293b', color: '#fff', fontSize: '12px' }} />
+            <Bar dataKey="approvalRate" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      {best && worst && (
+        <p className="text-xs text-slate-400 font-sans leading-relaxed">
+          <strong>Business Insight:</strong> {best.type} applicants have the highest approval rate ({best.approvalRate.toFixed(1)}%), while {worst.type} applicants see the lowest ({worst.approvalRate.toFixed(1)}%) — likely reflecting differences in income-stability verification.
+        </p>
+      )}
+    </div>
+  );
+};
