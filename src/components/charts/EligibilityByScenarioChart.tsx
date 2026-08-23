@@ -6,6 +6,9 @@ interface Props {
 }
 
 export const EligibilityByScenarioChart: React.FC<Props> = ({ data }) => {
+  const best = [...data].sort((a, b) => b.Eligible - a.Eligible)[0];
+  const worst = [...data].sort((a, b) => a.Eligible - b.Eligible)[0];
+
   return (
     <div className="bg-[#0f172a] border border-[#1e293b] rounded-xl p-6 space-y-4">
       <h4 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
@@ -25,9 +28,11 @@ export const EligibilityByScenarioChart: React.FC<Props> = ({ data }) => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-xs text-slate-400 font-sans leading-relaxed">
-        <strong>Business Insight:</strong> Education and E-commerce loan requests exhibit the highest instant approval rates (&gt;72%), while Personal Loans show higher high-risk flags due to uncollateralized risk factors.
-      </p>
+      {best && worst && (
+        <p className="text-xs text-slate-400 font-sans leading-relaxed">
+          <strong>Business Insight:</strong> {best.scenario} has the highest approval rate ({best.Eligible.toFixed(1)}% Eligible), while {worst.scenario} has the lowest ({worst.Eligible.toFixed(1)}% Eligible, {worst.Not_Eligible.toFixed(1)}% Not_Eligible) — reflecting how loan purpose drives eligibility more than any single applicant attribute.
+        </p>
+      )}
     </div>
   );
 };

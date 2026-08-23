@@ -6,14 +6,14 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div>
           <p className="text-slate-400 font-bold">EMIPredict AI — Capstone Financial Risk Assessment</p>
-          <p className="text-[11px] text-slate-500">FastAPI Backend on Render • Next.js/React Frontend on Vercel • MLflow Tracking</p>
+          <p className="text-[11px] text-slate-500">Node.js/Express on Render • React (Vite) Frontend • ONNX Runtime • MLflow on DagsHub</p>
         </div>
         <div className="flex items-center gap-4 text-[11px]">
-          <span>Dataset: 400K Records</span>
+          <span>Dataset: 404,800 Records</span>
           <span>•</span>
           <span>Target RMSE: &lt;2000 INR</span>
           <span>•</span>
-          <span>Accuracy: 94.2%</span>
+          <span>Accuracy: 97.64%</span>
         </div>
       </div>
     </footer>

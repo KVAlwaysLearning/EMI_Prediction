@@ -6,6 +6,16 @@ interface Props {
 }
 
 export const EligibilityByAgeChart: React.FC<Props> = ({ data }) => {
+  const rates = data.map(d => d.approvalRate);
+  const max = Math.max(...rates);
+  const min = Math.min(...rates);
+  const spread = max - min;
+  const top = data.find(d => d.approvalRate === max);
+
+  const insight = spread < 3
+    ? `Approval rate is essentially flat across age brackets (${min.toFixed(1)}%-${max.toFixed(1)}%) — age is not a meaningful differentiator in this data.`
+    : `Approval rate peaks in the ${top?.ageBracket} bracket at ${max.toFixed(1)}%, ranging down to ${min.toFixed(1)}% elsewhere.`;
+
   return (
     <div className="bg-[#0f172a] border border-[#1e293b] rounded-xl p-6 space-y-4">
       <h4 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
@@ -23,7 +33,7 @@ export const EligibilityByAgeChart: React.FC<Props> = ({ data }) => {
         </ResponsiveContainer>
       </div>
       <p className="text-xs text-slate-400 font-sans leading-relaxed">
-        <strong>Business Insight:</strong> Applicants aged 31–50 demonstrate peak credit stability and income growth, resulting in approval rates above 78% compared to younger applicants entering the workforce.
+        <strong>Business Insight:</strong> {insight}
       </p>
     </div>
   );

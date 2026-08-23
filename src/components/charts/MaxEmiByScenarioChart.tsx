@@ -6,6 +6,12 @@ interface Props {
 }
 
 export const MaxEmiByScenarioChart: React.FC<Props> = ({ data }) => {
+  const overallMax = Math.max(...data.map(d => d.max));
+  const topScenario = data.find(d => d.max === overallMax);
+  const medians = data.map(d => d.median);
+  const medianLow = Math.min(...medians);
+  const medianHigh = Math.max(...medians);
+
   return (
     <div className="bg-[#0f172a] border border-[#1e293b] rounded-xl p-6 space-y-4">
       <h4 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
@@ -26,9 +32,11 @@ export const MaxEmiByScenarioChart: React.FC<Props> = ({ data }) => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-xs text-slate-400 font-sans leading-relaxed">
-        <strong>Business Insight:</strong> Vehicle and Personal Loan products support higher monthly EMI ceilings (up to 48,000–50,000 INR), whereas consumer E-commerce loans cluster below 15,000 INR.
-      </p>
+      {topScenario && (
+        <p className="text-xs text-slate-400 font-sans leading-relaxed">
+          <strong>Business Insight:</strong> Median recommended EMI stays in a narrow ₹{medianLow.toLocaleString()}-₹{medianHigh.toLocaleString()} band across every scenario, but {topScenario.scenario} reaches the highest ceiling observed (up to ₹{overallMax.toLocaleString()}) — a small higher-income segment drives a long right tail rather than a uniformly wide spread.
+        </p>
+      )}
     </div>
   );
 };
