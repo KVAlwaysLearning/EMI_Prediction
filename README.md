@@ -1,6 +1,13 @@
 # EMIPredict AI — Intelligent Financial Risk Assessment Platform
 
 EMIPredict AI is an end-to-end Machine Learning and Full-Stack Web Application for real-time financial EMI eligibility classification and maximum monthly EMI recommendation. Built on a standardized **48-feature pipeline** (24 numeric/derived financial metrics and 24 one-hot encoded categorical indicators) across 5 loan scenarios (*E-commerce Shopping, Home Appliances, Vehicle, Personal Loan, Education*), the platform combines automated feature engineering, **DagsHub remote MLflow experiment tracking**, **ONNX Runtime Node.js inference**, Python CLI subprocess inference, and a responsive React underwriting dashboard.
+---
+
+## Important Links:
+
+[Live Render App]: https://emipredict-ai-0v9r.onrender.com/
+
+[Streamlit App]: https://emiprediction-00.streamlit.app
 
 ---
 
