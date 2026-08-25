@@ -5,9 +5,9 @@ EMIPredict AI is an end-to-end Machine Learning and Full-Stack Web Application f
 
 ## Important Links:
 
-[Live Render App]: https://emipredict-ai-0v9r.onrender.com/
+[Live Render App]https://emipredict-ai-0v9r.onrender.com/
 
-[Streamlit App]: https://emiprediction-00.streamlit.app
+[Streamlit App]https://emiprediction-00.streamlit.app
 
 ---
 
